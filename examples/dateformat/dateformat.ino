@@ -1,23 +1,38 @@
 /*
-  DS3231: Real-Time Clock. Date Format
-  Read more: www.jarzebski.pl/arduino/komponenty/zegar-czasu-rzeczywistego-rtc-ds3231.html
-  GIT: https://github.com/jarzebski/Arduino-DS3231
-  Web: http://www.jarzebski.pl
-  (c) 2014 by Korneliusz Jarzebski
-*/
+ *  DS3231: Real-Time Clock. Date Format
+ *
+ *  created 03 Feb 2021
+ *  by Lars Erik Storbukås <https://github.com/storbukas>
+ *
+ *  Source: https://github.com/storbukas/DS3231
+ *  Original source: https://github.com/jarzebski/Arduino-DS3231>
+ *
+ *  Licensed under the GPL-3.0 License
+ *  https://www.gnu.org/licenses/gpl-3.0.en.html
+ *
+ */
 
-#include <Wire.h>
+// ---------------------------------------------------------------------
+// INCLUDES
+//
 #include <DS3231.h>
+#include <Wire.h>
 
+// ---------------------------------------------------------------------
+// VARIABLES
+//
 DS3231 clock;
 RTCDateTime dt;
 
-void setup()
-{
+// ---------------------------------------------------------------------
+// SETUP
+//
+void setup() {
   Serial.begin(9600);
 
   // Initialize DS3231
-  Serial.println("Initialize DS3231");;
+  Serial.println("Initialize DS3231");
+  ;
   clock.begin();
 
   // Set sketch compiling time
@@ -30,15 +45,17 @@ void setup()
   // clock.setDateTime(2014, 4, 13, 19, 21, 00);
 }
 
-void loop()
-{
+// ---------------------------------------------------------------------
+// LOOP
+//
+void loop() {
   dt = clock.getDateTime();
 
   Serial.print("Long number format:          ");
   Serial.println(clock.dateFormat("d-m-Y H:i:s", dt));
 
   Serial.print("Long format with month name: ");
-  Serial.println(clock.dateFormat("d F Y H:i:s",  dt));
+  Serial.println(clock.dateFormat("d F Y H:i:s", dt));
 
   Serial.print("Short format witch 12h mode: ");
   Serial.println(clock.dateFormat("jS M y, h:ia", dt));
@@ -58,4 +75,3 @@ void loop()
 
   delay(1000);
 }
-

@@ -3,23 +3,6 @@ Arduino-DS3231
 
 DS3231 Real-Time Clock.
 
-![DS3231](http://www.jarzebski.pl/media/big/publish/2014/04/ds3231-dateformat.png)
-
-I need your help
-----------------
-
-July 31, 2017
-
-In the near future I plan to refactoring the libraries. The main goal is to improve code quality, new features and add support for different versions of Arduino boards like Uno, Mega and Zero.
-
-For this purpose I need to buy modules, Arduino Boards and lot of beer. 
-
-If you want to support the further and long-term development of libraries, please help.
-
-You can do this by transferring any amount to my PayPal account: paypal@jarzebski.pl
-
-Thanks!
-
 Date formats (Day)
 ------------------
 
@@ -65,16 +48,7 @@ Dare formats (Full Date/Time)
 
  * U : Seconds since the Unix Epoch (January 1 1970 00:00:00 GMT)
 
-More info
----------
-
-Tutorials: www.jarzebski.pl/arduino/komponenty/zegar-czasu-rzeczywistego-rtc-ds3231.html
-
-This library use I2C to communicate, 2 pins are required to interface.
-
 Credits
 -------
 
-Original Code by JeeLabs http://news.jeelabs.org/code/
-
-First fork by adafruit https://github.com/adafruit/RTClib
+Forked from https://github.com/jarzebski/Arduino-DS3231
